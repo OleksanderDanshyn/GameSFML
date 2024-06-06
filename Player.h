@@ -1,52 +1,36 @@
-//
-// Created by HACKERMAN on 015 15.05.24.
-//
+// Player.h
+// Created by HACKERMAN on 015 15.05.24
 
 #ifndef GAMEPROJECT_PLAYER_H
 #define GAMEPROJECT_PLAYER_H
 
+#include <SFML/Graphics.hpp>
+#include <vector>
+#include <cmath>
+#include <string>
+
+// Forward declaration of Walls class
+class Walls;
 
 class Player {
-
-
 public:
     sf::Texture texture;
     sf::Sprite sprite;
-    Player(){
+    sf::Sprite spriteVisible;
+    float speed = 200.f;
 
-    };
+    Player();
+    explicit Player(const std::string& textureDir);
 
-    Player(std::string textureDir){
+    void drawPlayer(sf::RenderWindow& window) const;
+    sf::Vector2f getPos();
+    void movePlayer(float deltaTime, std::vector<std::vector<Walls>> rooms, sf::RenderWindow& window);
 
-        if (!texture.loadFromFile("chaos.png"))
-        {
-            std::cout << "error";
-        }
-        sprite.setTexture(texture);
-        sprite.setScale(sf::Vector2f(0.2f, 0.15f));
-    }
-    auto drawPlayer(sf::RenderWindow &window){
-        window.draw(sprite);
-    }
-    auto getSprite(){
-        return sprite;
-    }
+    void rotateWithMouse(sf::RenderWindow &window);
+private:
+    void moveIfPossible(float offsetX, float offsetY, std::vector<std::vector<Walls>>& rooms);
 
-    void movePlayer(){
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)){
-        sprite.move(10, 0);
-    }
-    else if(sf::Keyboard::isKeyPressed( sf::Keyboard::A)){
-        sprite.move(-10, 0);
-    }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
-        sprite.move(0, -10);
-    }
-    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)){
-        sprite.move(0, 10);
-    }
-    }
+
 };
-
 
 #endif //GAMEPROJECT_PLAYER_H
