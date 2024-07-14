@@ -1,40 +1,39 @@
 //
-// Created by HACKERMAN on 006 06.06.24.
+//Ammo system, could implement it somewhere else, was using it for drawing weapon previously. Can add more types of weapons
 //
 
 #include "Weapon.h"
-#include <iostream>
-#include "Player.h"
 
+//ammo is limited, need to reload from time to time
+Weapon::Weapon(int maxAmmoVar) : ammoCur(maxAmmoVar) {
+    maxAmmo = maxAmmoVar;
+}
 
-Weapon::Weapon(const std::string& textureDir, Player player) {
-    if (!texture.loadFromFile(textureDir)) {
-        std::cout << "error loading texture";
+void Weapon::useAmmo() {
+    if(ammoCur > 0){
+        --ammoCur;
     }
-    gun.setTexture(texture);
-    gun.setOrigin(player.getPos());
-    gun.setScale(0.1, 0.1);
-
+}
+bool Weapon::canShoot() const {
+    return ammoCur > 0;
+}
+void Weapon::reload() {
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::R)){
+        ammoCur = maxAmmo;
+    }
+}
+void Weapon::upgradeAmmoMax(){
+    maxAmmo += 1;
 }
 
-void Weapon::drawWeapon(sf::RenderWindow& window, Player player){
-    window.draw(gun);
-    gun.setPosition(player.getPos());
+int Weapon::getAmmoCur() const {
+    return ammoCur;
 }
-void Weapon::rotateWithMouse(sf::RenderWindow& window) {
-    // Get the mouse position relative to the window
-    sf::Vector2i mousePos = sf::Mouse::getPosition(window);
 
-    // Convert mouse position to world coordinates
-    sf::Vector2f worldPos = window.mapPixelToCoords(mousePos);
-
-    // Calculate the angle between the sprite and the mouse position
-    sf::Vector2f spritePos = gun.getPosition();
-    float deltaX = worldPos.x - spritePos.x;
-    float deltaY = worldPos.y - spritePos.y;
-    float angle = std::atan2(deltaY, deltaX) * 180 / 3.14159f;
-
-    // Set the rotation of the sprite
-    gun.setRotation(angle);
+int Weapon::getMaxAmmo() const {
+    return maxAmmo;
 }
+
+
+
 

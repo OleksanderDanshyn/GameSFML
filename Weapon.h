@@ -1,24 +1,31 @@
 //
-// Created by HACKERMAN on 006 06.06.24.
+//
 //
 
 #ifndef GAMEPROJECT_WEAPON_H
 #define GAMEPROJECT_WEAPON_H
 #include <SFML/Graphics.hpp>
 #include "Player.h"
-
 class Weapon {
 private:
     sf::Sprite gun;
     sf::Texture texture;
 public:
-    Weapon(const std::string &textureDir, Player player);
-    void drawWeapon(sf::RenderWindow &window);
+    int ammoCur;
+    int maxAmmo;
+    explicit Weapon(int maxAmmo);
 
-    void drawWeapon(sf::RenderWindow &window, Player player);
+    void useAmmo();
 
-    void rotateWithMouse(sf::RenderWindow &window);
+    void reload();
+
+    bool canShoot() const;
+
+    void upgradeAmmoMax();
+
+    int getAmmoCur() const;
+
+    int getMaxAmmo() const;
+
 };
-
-
 #endif //GAMEPROJECT_WEAPON_H

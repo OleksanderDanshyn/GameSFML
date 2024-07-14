@@ -17,6 +17,14 @@ add_executable(gameProject main.cpp
         Weapon.h
         Enemy.cpp
         Enemy.h
+        Bullet.cpp
+        Bullet.h
+        RoomManager.cpp
+        RoomManager.h
+        RoomSwitcher.cpp
+        RoomSwitcher.h
+        GUI.cpp
+        GUI.h
 )
 
 target_link_libraries(gameProject sfml-graphics)

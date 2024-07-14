@@ -89,6 +89,38 @@ build CMakeFiles/gameProject.dir/Enemy.cpp.obj: CXX_COMPILER__gameProject_unscan
   OBJECT_DIR = CMakeFiles\gameProject.dir
   OBJECT_FILE_DIR = CMakeFiles\gameProject.dir
 
+build CMakeFiles/gameProject.dir/Bullet.cpp.obj: CXX_COMPILER__gameProject_unscanned_Debug C$:/Users/User/CLionProjects/gameProject/Bullet.cpp || cmake_object_order_depends_target_gameProject
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\gameProject.dir\Bullet.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/User/CLionProjects/gameProject/cmake-build-debug/_deps/sfml-src/include
+  OBJECT_DIR = CMakeFiles\gameProject.dir
+  OBJECT_FILE_DIR = CMakeFiles\gameProject.dir
+
+build CMakeFiles/gameProject.dir/RoomManager.cpp.obj: CXX_COMPILER__gameProject_unscanned_Debug C$:/Users/User/CLionProjects/gameProject/RoomManager.cpp || cmake_object_order_depends_target_gameProject
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\gameProject.dir\RoomManager.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/User/CLionProjects/gameProject/cmake-build-debug/_deps/sfml-src/include
+  OBJECT_DIR = CMakeFiles\gameProject.dir
+  OBJECT_FILE_DIR = CMakeFiles\gameProject.dir
+
+build CMakeFiles/gameProject.dir/RoomSwitcher.cpp.obj: CXX_COMPILER__gameProject_unscanned_Debug C$:/Users/User/CLionProjects/gameProject/RoomSwitcher.cpp || cmake_object_order_depends_target_gameProject
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\gameProject.dir\RoomSwitcher.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/User/CLionProjects/gameProject/cmake-build-debug/_deps/sfml-src/include
+  OBJECT_DIR = CMakeFiles\gameProject.dir
+  OBJECT_FILE_DIR = CMakeFiles\gameProject.dir
+
+build CMakeFiles/gameProject.dir/GUI.cpp.obj: CXX_COMPILER__gameProject_unscanned_Debug C$:/Users/User/CLionProjects/gameProject/GUI.cpp || cmake_object_order_depends_target_gameProject
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\gameProject.dir\GUI.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/User/CLionProjects/gameProject/cmake-build-debug/_deps/sfml-src/include
+  OBJECT_DIR = CMakeFiles\gameProject.dir
+  OBJECT_FILE_DIR = CMakeFiles\gameProject.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target gameProject
@@ -97,7 +129,7 @@ build CMakeFiles/gameProject.dir/Enemy.cpp.obj: CXX_COMPILER__gameProject_unscan
 #############################################
 # Link the executable gameProject.exe
 
-build gameProject.exe: CXX_EXECUTABLE_LINKER__gameProject_Debug CMakeFiles/gameProject.dir/main.cpp.obj CMakeFiles/gameProject.dir/Walls.cpp.obj CMakeFiles/gameProject.dir/Player.cpp.obj CMakeFiles/gameProject.dir/Weapon.cpp.obj CMakeFiles/gameProject.dir/Enemy.cpp.obj | _deps/sfml-build/lib/libsfml-graphics-s-d.a _deps/sfml-build/lib/libsfml-window-s-d.a _deps/sfml-build/lib/libsfml-system-s-d.a _deps/sfml-src/extlibs/libs-mingw/x64/libfreetype.a || _deps/sfml-build/lib/libsfml-graphics-s-d.a _deps/sfml-build/lib/libsfml-system-s-d.a _deps/sfml-build/lib/libsfml-window-s-d.a
+build gameProject.exe: CXX_EXECUTABLE_LINKER__gameProject_Debug CMakeFiles/gameProject.dir/main.cpp.obj CMakeFiles/gameProject.dir/Walls.cpp.obj CMakeFiles/gameProject.dir/Player.cpp.obj CMakeFiles/gameProject.dir/Weapon.cpp.obj CMakeFiles/gameProject.dir/Enemy.cpp.obj CMakeFiles/gameProject.dir/Bullet.cpp.obj CMakeFiles/gameProject.dir/RoomManager.cpp.obj CMakeFiles/gameProject.dir/RoomSwitcher.cpp.obj CMakeFiles/gameProject.dir/GUI.cpp.obj | _deps/sfml-build/lib/libsfml-graphics-s-d.a _deps/sfml-build/lib/libsfml-window-s-d.a _deps/sfml-build/lib/libsfml-system-s-d.a _deps/sfml-src/extlibs/libs-mingw/x64/libfreetype.a || _deps/sfml-build/lib/libsfml-graphics-s-d.a _deps/sfml-build/lib/libsfml-system-s-d.a _deps/sfml-build/lib/libsfml-window-s-d.a
   FLAGS = -g
   LINK_LIBRARIES = _deps/sfml-build/lib/libsfml-graphics-s-d.a  _deps/sfml-build/lib/libsfml-window-s-d.a  _deps/sfml-build/lib/libsfml-system-s-d.a  -lopengl32  -lwinmm  -lgdi32  _deps/sfml-src/extlibs/libs-mingw/x64/libfreetype.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\gameProject.dir
